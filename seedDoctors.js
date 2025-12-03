@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Doctor = require('./models/Doctor');
-
 dotenv.config();
-
 // Arabic doctor names for each specialization
 const doctorData = {
     'General Practitioner': [
@@ -56,7 +54,6 @@ const doctorData = {
         'د. بشار المتنوع'
     ]
 };
-
 async function seedDoctors() {
     try {
         // Connect to MongoDB
@@ -78,7 +75,6 @@ async function seedDoctors() {
                 });
             }
         }
-
         await Doctor.insertMany(doctors);
         console.log(`Successfully seeded ${doctors.length} doctors`);
 
@@ -86,12 +82,10 @@ async function seedDoctors() {
         for (const [type, names] of Object.entries(doctorData)) {
             console.log(`${type}: ${names.length} doctors`);
         }
-
         process.exit(0);
     } catch (err) {
         console.error('Error seeding doctors:', err);
         process.exit(1);
     }
 }
-
 seedDoctors();
