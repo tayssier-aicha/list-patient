@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const DoctorSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -28,5 +27,4 @@ const DoctorSchema = new mongoose.Schema({
         default: Date.now
     }
 });
-
 module.exports = mongoose.model('Doctor', DoctorSchema);
