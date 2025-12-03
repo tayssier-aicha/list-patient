@@ -6,19 +6,15 @@ const switchText = document.getElementById('switch-text');
 const authTitle = document.querySelector('.auth-title');
 const submitBtn = authForm.querySelector('button');
 const signupFields = document.getElementById('signup-fields');
-
 // New Inputs
 const firstNameInput = document.getElementById('firstName');
 const lastNameInput = document.getElementById('lastName');
 const emailInput = document.getElementById('email');
-
 let isLogin = true;
-
 // Check if already logged in
 if (localStorage.getItem('token')) {
     window.location.href = 'dashboard.html';
 }
-
 switchBtn.addEventListener('click', (e) => {
     e.preventDefault();
     isLogin = !isLogin;
